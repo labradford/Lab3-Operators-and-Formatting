@@ -110,7 +110,7 @@ namespace Lab3
             else
             {
                 decimal newValue = a.Value / scalar;
-                return new Angle(Normalize(newValue, a.Units));
+                return new Angle(Normalize(newValue, a.Units), a.Units);
             }
             
         }
@@ -220,7 +220,7 @@ namespace Lab3
 
         public Angle ToRadians()
         {
-            return new Angle(ConvertAngleValue(Value, Units, AngleUnits.Radians), AngleUnits.Gradians);
+            return new Angle(ConvertAngleValue(Value, Units, AngleUnits.Radians), AngleUnits.Radians);
         }
 
         public Angle ToTurns()

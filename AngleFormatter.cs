@@ -65,24 +65,24 @@ namespace Lab3
                 {
                     default:
                     case 'd':
-                        a.ToDegrees();
+                        a = a.ToDegrees();
                         result = $"{a.Value.ToString(fmt)}{AngleUnits.Degrees.ToSymbol()}";
                         break;
                     case 'g':
-                        a.ToGradians();
+                        a = a.ToGradians();
                         result = $"{a.Value.ToString(fmt)}{AngleUnits.Gradians.ToSymbol()}";
                         break;
                     case 'p':
-                        a.ToRadians();
+                        a = a.ToRadians();
                         a /= Angle.pi;
                         result = $"{a.Value.ToString(fmt)}π{AngleUnits.Radians.ToSymbol()}";
                         break;
                     case 'r':
-                        a.ToRadians();
+                        a = a.ToRadians();
                         result = $"{a.Value.ToString(fmt)}{AngleUnits.Radians.ToSymbol()}";
                         break;
                     case 't':
-                        a.ToTurns();
+                        a = a.ToTurns();
                         result = $"{a.Value.ToString(fmt)}{AngleUnits.Turns.ToSymbol()}";
                         break;
                 }
