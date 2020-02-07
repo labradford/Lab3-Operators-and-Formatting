@@ -37,16 +37,9 @@ namespace Lab3
                     string unit = a.Units.ToString();
                     code = char.ToLower(unit.First());
                 }
-                else if (format.Length > 1)
+                else
                 {
-                    if (char.IsDigit(format[1]))
-                    {
-                        digits = format[1];
-                        digits.Constrain(0, 9);
-                    }
-                }
-                else if (format.Length == 1)
-                {
+                    code = format[0];
                     if (code == 'd' || code == 'g' || code == 't')
                     {
                         digits = 2;
@@ -56,6 +49,16 @@ namespace Lab3
                         digits = 5;
                     }
                 }
+                if (format.Length > 1)
+                {
+                    code = format[0];
+                    if (char.IsDigit(format[1]))
+                    {
+                        digits = format[1];
+                        digits.Constrain(0, 9);
+                    }
+                }
+                
 
                 string fmt = "f" + digits;
 
