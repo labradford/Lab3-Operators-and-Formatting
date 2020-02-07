@@ -36,20 +36,20 @@ namespace Lab3
                 {
                     string unit = a.Units.ToString();
                     code = char.ToLower(unit.First());
-                }
-                else
-                {
-                    code = format[0];
-                    if (code == 'd' || code == 'g' || code == 't')
-                    {
-                        digits = 2;
-                    }
-                    else if (code == 'r' || code == 'p')
+                    if (code == 'r' || code == 'p')
                     {
                         digits = 5;
                     }
                 }
-                if (format.Length > 1)
+                else
+                {
+                    code = format[0];
+                    if (code == 'r' || code == 'p')
+                    {
+                        digits = 5;
+                    }
+                }
+                if (!string.IsNullOrEmpty(format) && format.Length > 1)
                 {
                     code = format[0];
                     if (char.IsDigit(format[1]))
@@ -58,7 +58,6 @@ namespace Lab3
                         digits.Constrain(0, 9);
                     }
                 }
-                
 
                 string fmt = "f" + digits;
 

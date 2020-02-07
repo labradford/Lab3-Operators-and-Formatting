@@ -86,19 +86,19 @@ namespace Lab3
         public static Angle operator + (Angle a, decimal scalar)
         {
             decimal newValue = a.Value + scalar;
-            return new Angle(Normalize(newValue, a.Units));
+            return new Angle(Normalize(newValue, a.Units), a.Units);
         }
 
         public static Angle operator - (Angle a, decimal scalar)
         {
             decimal newValue = a.Value - scalar;
-            return new Angle(Normalize(newValue, a.Units));
+            return new Angle(Normalize(newValue, a.Units), a.Units);
         }
 
         public static Angle operator * (Angle a, decimal scalar)
         {
             decimal newValue = a.Value * scalar;
-            return new Angle(Normalize(newValue, a.Units));
+            return new Angle(Normalize(newValue, a.Units), a.Units);
         }
 
         public static Angle operator / (Angle a, decimal scalar)
